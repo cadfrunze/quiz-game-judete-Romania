@@ -1,6 +1,14 @@
 import pandas as pd
 
-data = pd.read_excel('Lista-judete-Romania-tabel-excel.xls')
+lista_coordonate = []
+
+def coordonate(x, y):
+    coor = (x, y)
+    lista_coordonate.append(coor)
+    with open('text.txt', 'a') as file:
+        file.write(str(lista_coordonate[-1]))
+        file.write('\n')
+
 
 
 
