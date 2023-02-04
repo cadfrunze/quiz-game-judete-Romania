@@ -1,17 +1,17 @@
 import pandas as pd
 
-lista_coordonate = []
+dt = pd.read_csv('coordonate_judete.csv')
 
-# def coordonate(x, y):
-#     coor = (x, y)
-#     lista_coordonate.append(coor)
-#     with open('text.txt', 'a') as file:
-#         file.write(str(lista_coordonate[-1]))
-#         file.write('\n')
+dt = dt.coordonate
+lista = dt.to_list()
 
 
-
-
+# numar = ()
+# for element in lista:
+#     element[0] = int(element[0])
+#     element[1] = int(element[1])
+#     numar = (element[0], element[1])
+#     print(numar)
 
 
 

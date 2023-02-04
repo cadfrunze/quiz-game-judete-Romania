@@ -29,4 +29,7 @@ turtle.shape(imagine)
 
 
 
+
+
+
 screen.mainloop()
