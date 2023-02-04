@@ -1,2 +1,10 @@
-# with open('work_log.txt', 'a') as work:
-#     work.write('04.02.2023')
+import pandas as pd
+
+data = pd.read_excel('Lista-judete-Romania-tabel-excel.xls')
+
+
+
+
+
+
+
