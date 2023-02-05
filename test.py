@@ -30,3 +30,4 @@
 #
 # data_ = pd.DataFrame(dict_)
 # data_.to_csv('map_Romania.csv')
+
