@@ -5,7 +5,7 @@ from tkinter import messagebox
 import time
 
 COLORS = ['red', 'green', 'blue', 'brown', 'purple', 'black']
-dt = pd.read_csv('map_Romania.csv')
+dt = pd.read_csv('./files_for_game/map_Romania.csv')
 
 dimension = 10
 
