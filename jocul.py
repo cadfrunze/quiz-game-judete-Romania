@@ -7,17 +7,17 @@ import time
 COLORS = ['red', 'green', 'blue', 'brown', 'purple', 'black']
 dt = pd.read_csv('map_Romania.csv')
 
-
-# raspuns = dt[dt.judet == 'Alba']
-# cor = (int(raspuns.x), int(raspuns.y))
-# print(cor)
+dimension = 10
 
 class Robotzelu():
     """
     Creearea schemei a jocului, include:
-    1. Fereastra-box pt a raspunde,
-    2. Verificare raspuns,
-    3. Afisare nume judet daca raspunsul este corect, pe desen conform coordonatelor
+
+        1. Fereastra-box pt a raspunde,
+
+        2. Verificare raspuns,
+
+        3. Afisare nume judet daca raspunsul este corect, pe desen conform coordonatelor
     """
 
     def __init__(self):
@@ -36,7 +36,7 @@ class Robotzelu():
         self.verificare_cuvant()
         while self.raspuns in self.ver_raspuns:
             messagebox.showinfo(title=f'{self.raspuns}', message='Ai mai scris acest judet')
-            self.raspunde()
+            self.raspuns = self.ecran.textinput(title='Scrie un judet din Ro', prompt='Raspunde aici').title()
         else:
             if self.raspuns in dt.judet.to_list():
                 afirmatie = dt[dt.judet == self.raspuns]
@@ -46,7 +46,7 @@ class Robotzelu():
                 time.sleep(1)
                 self.obiect.color(random.choice(COLORS))
                 self.obiect.goto(coor)
-                self.obiect.write(arg=f'{raspuns_corect[0]}', font=('Arial', 10, 'normal'))
+                self.obiect.write(arg=f'{raspuns_corect[0]}', font=('Arial', dimension, 'normal'))
                 self.ver_raspuns.append(raspuns_corect[0])
             else:
                 messagebox.showerror(title='Gresit!', message='Raspuns incorect!')
@@ -61,3 +61,4 @@ class Robotzelu():
             self.raspuns = self.raspuns.replace('- ', '-')
         elif ' ' in self.raspuns:
             self.raspuns = self.raspuns.replace(' ', '-')
+

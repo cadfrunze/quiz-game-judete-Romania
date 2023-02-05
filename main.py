@@ -1,6 +1,10 @@
 import turtle
 from jocul import Robotzelu
-import pandas as pd
+
+
+# Configurarea ecranului, de aici se va executa jocul,
+# si totodata scorul
+
 
 screen = turtle.Screen()
 screen.bgcolor('black')
