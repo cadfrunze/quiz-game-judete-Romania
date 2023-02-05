@@ -62,7 +62,3 @@ class Robotzelu():
             self.raspuns = self.raspuns.replace('- ', '-')
         elif ' ' in self.raspuns:
             self.raspuns = self.raspuns.replace(' ', '-')
-
-    def afisare_greseli(self):
-        self.obiect.goto(x=-400, y=400)
-        self.obiect.write(arg=f"Numar greseli: {self.greseli}")
