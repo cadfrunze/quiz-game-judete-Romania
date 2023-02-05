@@ -28,6 +28,7 @@ class Robotzelu():
         self.obiect.hideturtle()
         self.ver_raspuns = []
         self.greseli = 0
+        self.scor = 0
 
     def raspunde(self):
         self.raspuns = self.ecran.textinput(title='Scrie un judet din Ro', prompt='Raspunde aici').title()
@@ -49,6 +50,7 @@ class Robotzelu():
                 self.obiect.goto(coor)
                 self.obiect.write(arg=f'{raspuns_corect[0]}', font=('Arial', dimension, 'normal'))
                 self.ver_raspuns.append(raspuns_corect[0])
+                self.scor += 1
             else:
                 messagebox.showerror(title='Gresit!', message='Raspuns incorect!')
                 self.greseli += 1
