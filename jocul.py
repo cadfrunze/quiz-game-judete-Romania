@@ -9,6 +9,7 @@ dt = pd.read_csv('./files_for_game/map_Romania.csv')
 
 dimension = 10
 
+
 class Robotzelu():
     """
     Creearea schemei a jocului, include:
@@ -62,3 +63,6 @@ class Robotzelu():
         elif ' ' in self.raspuns:
             self.raspuns = self.raspuns.replace(' ', '-')
 
+    def afisare_greseli(self):
+        self.obiect.goto(x=-400, y=400)
+        self.obiect.write(arg=f"Numar greseli: {self.greseli}")
