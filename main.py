@@ -16,6 +16,13 @@ screen.addshape(imagine)
 turtle.shape(imagine)
 screen.tracer(0)
 
+t = turtle.Turtle()
+t.penup()
+t.hideturtle()
+t.color('red')
+t.goto(x=150, y=-340)
+t.write(font=('Arial', 8, 'normal'), arg='V.1.0\nhttps://github.com/cadfrunze/quiz-game-judete-Romania\nmarius1890@yahoo.com')
+
 robotelu = Robotzelu()
 tabela_scor = TabelaScor()
 joc = True
