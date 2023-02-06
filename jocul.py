@@ -10,7 +10,7 @@ dt = pd.read_csv('./files_for_game/map_Romania.csv')
 dimension = 10
 
 
-class Robotzelu():
+class Robotzelu:
     """
     Creearea schemei a jocului, include:
 
@@ -27,8 +27,7 @@ class Robotzelu():
         self.obiect.penup()
         self.obiect.hideturtle()
         self.ver_raspuns = []
-        self.greseli = 0
-        self.scor = 0
+        self.check = None
 
     def raspunde(self):
         self.raspuns = self.ecran.textinput(title='Scrie un judet din Ro', prompt='Raspunde aici').title()
@@ -50,10 +49,12 @@ class Robotzelu():
                 self.obiect.goto(coor)
                 self.obiect.write(arg=f'{raspuns_corect[0]}', font=('Arial', dimension, 'normal'))
                 self.ver_raspuns.append(raspuns_corect[0])
-                self.scor += 1
+                self.check = True
+
             else:
                 messagebox.showerror(title='Gresit!', message='Raspuns incorect!')
-                self.greseli += 1
+                self.check = False
+            return self.check
 
     def verificare_cuvant(self):
         if ' - ' in self.raspuns:

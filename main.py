@@ -2,7 +2,6 @@ import turtle
 from jocul import Robotzelu
 from afisare_scor import TabelaScor
 
-
 # Configurarea ecranului, de aici se va executa jocul,
 # si totodata scorul
 
@@ -16,41 +15,15 @@ screen.addshape(imagine)
 turtle.shape(imagine)
 screen.tracer(0)
 
-
 robotelu = Robotzelu()
 tabela_scor = TabelaScor()
 joc = True
 
-
+tabela_scor.tablou_len_data()
 while joc:
-    tabela_scor.tablou_len_data()
     robotelu.raspunde()
+    tabela_scor.verificare = robotelu.check
+    tabela_scor.verificare_raspuns()
     screen.update()
-    tabela_scor.incercari = robotelu.greseli
-    tabela_scor.scor = robotelu.scor
-    if tabela_scor.incercari > 0:
-        tabela_scor.tablou_scor()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 screen.mainloop()
