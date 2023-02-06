@@ -1,6 +1,7 @@
 import turtle
 from jocul import Robotzelu
 from afisare_scor import TabelaScor
+from tkinter import messagebox
 
 # Configurarea ecranului, de aici se va executa jocul,
 # si totodata scorul
@@ -21,9 +22,19 @@ joc = True
 
 tabela_scor.tablou_len_data()
 while joc:
+    # Atentie la conditia 'if'...degeaba il scriem mai jos!
+    if len(robotelu.ver_raspuns) == 41:
+        messagebox.showinfo(title='Felicitari!', message='Ai castigat jocul!')
+        joc = False
+        continue
+
+    elif tabela_scor.incercari == 41:
+        messagebox.showerror(title='Dute-n pula!', message='Ai pierdut')
+        joc = False
+        continue
+
     robotelu.raspunde()
     tabela_scor.verificare = robotelu.check
     tabela_scor.verificare_raspuns()
-    screen.update()
 
 screen.mainloop()

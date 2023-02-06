@@ -30,7 +30,6 @@ class TabelaScor:
         self.refresh_scor()
         self.obiect.goto(x=-500, y=250)
         self.obiect.color('red')
-        self.incercari += 1
         self.obiect.write(arg=f'Numar greseli: {self.incercari}', font=('Arial', 15, 'normal'))
 
     def tablou_len_data(self):
@@ -51,4 +50,5 @@ class TabelaScor:
             self.modify_len -= 1
             self.tablou_len_data()
         elif self.verificare is False:
+            self.incercari += 1
             self.tablou_scor()
