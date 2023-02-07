@@ -2,6 +2,7 @@ import turtle
 from jocul import Robotzelu
 from afisare_scor import TabelaScor
 from tkinter import messagebox
+import sys
 
 # Configurarea ecranului, de aici se va executa jocul,
 # si totodata scorul
@@ -22,7 +23,6 @@ t.hideturtle()
 t.color('red')
 t.goto(x=150, y=-340)
 t.write(font=('Arial', 8, 'normal'), arg='V.1.0\nPowered by Cadfrunze')
-messagebox.showinfo(title='Bun venit', message='For other projects:\ngithub.com/cadfrunze\nContact:\nmarius1890@yahoo.com')
 robotelu = Robotzelu()
 tabela_scor = TabelaScor()
 joc = True
@@ -44,4 +44,46 @@ while joc:
     tabela_scor.verificare = robotelu.check
     tabela_scor.verificare_raspuns()
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+messagebox.showinfo(title='Bun venit', message='For other projects:\ngithub.com/cadfrunze\nContact:\nmarius1890@yahoo.com')
+
 screen.mainloop()
+
+
