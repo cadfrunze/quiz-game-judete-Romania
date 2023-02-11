@@ -3,6 +3,7 @@ import pandas as pd
 import random
 from tkinter import messagebox
 import time
+import sys
 
 COLORS = ['red', 'green', 'blue', 'brown', 'purple', 'black']
 dt = pd.read_csv('./files_for_game/map_Romania.csv')
@@ -39,6 +40,12 @@ class Robotzelu:
             messagebox.showinfo(title=f'{self.raspuns}', message='Ai mai scris acest judet')
             self.raspuns = self.ecran.textinput(title='Scrie un judet din Ro', prompt='Raspunde aici').title()
         else:
+            if self.raspuns == 'Exit':
+                data_dict = {}
+                data_dict['judet'] = self.ver_raspuns
+                new_data = pd.DataFrame(data_dict)
+                new_data.to_csv('judete_scrise.csv')
+                sys.exit()
             if self.raspuns in dt.judet.to_list():
                 afirmatie = dt[dt.judet == self.raspuns]
                 coor = (int(afirmatie.x), int(afirmatie.y))
