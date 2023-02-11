@@ -41,10 +41,14 @@ class Robotzelu:
             self.raspuns = self.ecran.textinput(title='Scrie un judet din Ro', prompt='Raspunde aici').title()
         else:
             if self.raspuns == 'Exit':
+                new_list = dt.judet.to_list()
+                for element in self.ver_raspuns:
+                    if element in new_list:
+                        new_list.remove(element)
                 data_dict = {}
-                data_dict['judet'] = self.ver_raspuns
+                data_dict['judet'] = new_list
                 new_data = pd.DataFrame(data_dict)
-                new_data.to_csv('judete_scrise.csv')
+                new_data.to_csv('./files_for_game/judete_care_trebuie_invatate.csv')
                 sys.exit()
             if self.raspuns in dt.judet.to_list():
                 afirmatie = dt[dt.judet == self.raspuns]
