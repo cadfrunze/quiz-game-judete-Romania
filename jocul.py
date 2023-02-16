@@ -41,10 +41,8 @@ class Robotzelu:
             self.raspuns = self.ecran.textinput(title='Scrie un judet din Ro', prompt='Raspunde aici').title()
         else:
             if self.raspuns == 'Exit':
-                new_list = dt.judet.to_list()
-                for element in self.ver_raspuns:
-                    if element in new_list:
-                        new_list.remove(element)
+                ver_elem = dt.judet.to_list()
+                new_list = [elem for elem in ver_elem if elem not in self.ver_raspuns]
                 data_dict = {}
                 data_dict['judet'] = new_list
                 new_data = pd.DataFrame(data_dict)
