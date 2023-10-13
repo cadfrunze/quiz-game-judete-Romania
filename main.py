@@ -14,6 +14,7 @@ screen.title('Joc interactiv cu enumerarea tuturor judetelor din Romania')
 screen.setup(width=1050, height=1000, startx=-100, starty=0)
 imagine = './files_for_game/Romania_counties_blank_big.gif'
 screen.addshape(imagine)
+screen.cv._rootwindow.resizable(False, False)
 turtle.shape(imagine)
 screen.tracer(0)
 
