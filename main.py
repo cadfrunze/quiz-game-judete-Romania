@@ -11,7 +11,7 @@ import sys
 screen = turtle.Screen()
 screen.bgcolor('black')
 screen.title('Joc interactiv cu enumerarea tuturor judetelor din Romania')
-screen.setup(width=1050, height=1000)
+screen.setup(width=1050, height=1000, startx=-100, starty=0)
 imagine = './files_for_game/Romania_counties_blank_big.gif'
 screen.addshape(imagine)
 turtle.shape(imagine)
@@ -33,12 +33,11 @@ while joc:
     if len(robotelu.ver_raspuns) == 41:
         messagebox.showinfo(title='Felicitari!', message='Ai castigat jocul!')
         joc = False
-        continue
+
 
     elif tabela_scor.incercari == 41:
         messagebox.showerror(title='Dute-n pula!', message='Ai pierdut')
         joc = False
-        continue
 
     robotelu.raspunde()
     tabela_scor.verificare = robotelu.check
