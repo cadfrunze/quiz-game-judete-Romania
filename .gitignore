@@ -1,2 +1,5 @@
 # created by virtualenv automatically
 *
+pyvenv.cfg
+files_for_game/Lista-judete-Romania-tabel-excel.xls
+.gitignore
